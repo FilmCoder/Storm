@@ -22,7 +22,7 @@ public class TestHeap
 
         heap.print();
 
-        heap.getRoot().printIdentity();
+        heap.peek().printIdentity();
 
     }
 
