@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.io.IOException;
 import realtimeweb.earthquakeservice.exceptions.EarthquakeException;
 import realtimeweb.earthquakeservice.domain.*;
@@ -13,6 +14,8 @@ public class EarthquakeTest
     static InputStream normalEarthquakes = null;
     static EarthquakeService service;
     static Report report;
+
+    static LinkedList<Earthquake> quakeList = new LinkedList();
 
     // ----------------------------------------------------------
     /**
@@ -46,6 +49,11 @@ public class EarthquakeTest
             e1.printStackTrace();
         }
 
+        updateReport();
+
+    }
+
+    static void updateReport() {
         // get earthquake data
         try {
             report = service.getEarthquakes(Threshold.ALL, History.HOUR);
@@ -53,5 +61,13 @@ public class EarthquakeTest
             e.printStackTrace();
         }
     }
+
+    static void addNewQuakes() {
+        updateReport();
+
+    }
+
+
+
 
 }
