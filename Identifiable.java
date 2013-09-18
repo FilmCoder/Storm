@@ -6,5 +6,5 @@ public interface Identifiable
     /**
      * @return A unique ID number
      */
-    public int getID();
+    public String getID();
 }

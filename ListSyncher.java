@@ -18,14 +18,14 @@ public class ListSyncher
             return;
         }
 
-        int last_added_id = dest.get(0).getID();
+        String last_added_id = dest.get(0).getID();
 
         int i=0;
         //copy from src to dest up until last_added in dest
 
         T next_elem = src.get(i);
 
-        while(next_elem.getID() != last_added_id) {
+        while(!next_elem.getID().equals(last_added_id)) {
             dest.add(i, next_elem);
             i++;
 
