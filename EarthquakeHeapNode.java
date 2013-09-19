@@ -1,6 +1,11 @@
 import realtimeweb.earthquakeservice.domain.Earthquake;
 
-
+/**
+ *
+ *
+ *  @author domnap
+ *  @version Sep 18, 2013
+ */
 public class EarthquakeHeapNode implements HeapAwareNode, Identifiable
 {
     public Earthquake quake;
@@ -17,10 +22,10 @@ public class EarthquakeHeapNode implements HeapAwareNode, Identifiable
     }
 
 
-    public int compareTo(EarthquakeHeapNode node)
+    public int compareTo(Object node)
     {
         double this_mag = quake.getMagnitude();
-        double other_mag = node.quake.getMagnitude();
+        double other_mag = ((EarthquakeHeapNode) node).quake.getMagnitude();
 
         if(this_mag > other_mag) {
             return 1;
@@ -29,24 +34,6 @@ public class EarthquakeHeapNode implements HeapAwareNode, Identifiable
         } else {
             return 0;
         }
-    }
-
-    // ----------------------------------------------------------
-    /**
-     * Place a description of your method here.
-     * @param args
-     */
-    public static void main(String[] args)
-    {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public int compareTo(Object o)
-    {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
     @Override

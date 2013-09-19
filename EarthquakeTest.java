@@ -14,8 +14,9 @@ public class EarthquakeTest
     static InputStream normalEarthquakes = null;
     static EarthquakeService service;
     static Report report;
+    static ListSyncher syncher;
 
-    static LinkedList<Earthquake> quakeList = new LinkedList();
+    static LinkedList<EarthquakeHeapNode> quakeList = new LinkedList();
 
     // ----------------------------------------------------------
     /**
